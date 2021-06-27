@@ -1,0 +1,10 @@
+
+a
+java:S11921"FDefine a constant instead of duplicating this literal "ERROR" 7 times.(ÎÆıÏÿÿÿÿÿ
+M
+java:S3655I"7Call "Optional#isPresent()" before accessing the value.(–àÒ¡
+N	java:S106M"9Replace this use of System.out or System.err by a logger.(ÙÈæ²
+\
+java:S1126N"AReplace this if-then-else statement by a single return statement.(Çê®Éøÿÿÿÿ
+n
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ô‘øıÿÿÿÿ

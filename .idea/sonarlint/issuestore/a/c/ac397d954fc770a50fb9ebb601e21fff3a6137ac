@@ -1,0 +1,13 @@
+
+n
+java:S1192c"XDefine a constant instead of duplicating this literal "redirect:/cart/checkout" 4 times.(ŠÄ—
+@
+java:S5411}"*Use the primitive boolean expression here.(¼†øÙ
+n
+java:S3753#"XAdd a call to "setComplete()" on the SessionStatus object in a "@RequestMapping" method.(ù™Ö‡
+^
+java:S4488R"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Šæƒ½
+N	java:S106["9Replace this use of System.out or System.err by a logger.(ÆÀûı
+N	java:S106]"9Replace this use of System.out or System.err by a logger.(Ş«“×
+S	java:S106j"9Replace this use of System.out or System.err by a logger.(ãùûÜÿÿÿÿÿ
+N	java:S106k"9Replace this use of System.out or System.err by a logger.(Ş«“×

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inscription| Maktabti</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container"></div>
+	<div class="container col-lg-3">
+		<form class="needs-validation border border-dark-1" method="POST"
+			th:action="@{/register.do}" style="margin-top: 15%;"
+			th:object="${accountRegistrationForm}" novalidate>
+
+			<h3 class="mt-4 ml-4" style="text-align: center;">Creer un
+				compte</h3>
+			<div class="form-row ml-4 mr-4">
+				<div class="col-md-12 mb-0">
+					<div th:if="${ERROR}">
+						<div class="alert alert-danger">[[${ERROR}]]</div>
+					</div>
+					<label for="validationCustom01"></label> <input type="text"
+						class="form-control" th:field="*{firstName}"
+						placeholder="Prenom" required>
+					<div class="valid-feedback">valide</div>
+					<div class="invalid-feedback">Entrer un prenom valide</div>
+				</div>
+			</div>
+			<div class="form-row ml-4 mr-4">
+				<div class="col-md-12 mb-0">
+					<label for="validationCustom01"></label> <input type="text"
+						class="form-control" th:field="*{lastName}"
+						placeholder="Nom" required>
+					<div class="valid-feedback">valide</div>
+					<div class="invalid-feedback">Entrer un nom valide!
+					</div>
+				</div>
+			</div>
+			<div class="form-row ml-4 mr-4">
+				<div class="col-md-12 mb-0">
+					<label for="validationCustom01"></label> <input type="email"
+						class="form-control" th:field="*{email}" placeholder="Email"
+						required>
+					<div class="valid-feedback">valide</div>
+					<div class="invalid-feedback">Entrer un email valide!</div>
+				</div>
+			</div>
+			<div class="form-row ml-4 mr-4">
+				<div class="col-md-12 mb-0">
+					<label for="validationCustom01"></label> <input type="password"
+						class="form-control" th:field="*{password}"
+						id="validationCustom01" placeholder="mot de passe" required>
+					<div class="valid-feedback">valide</div>
+					<div class="invalid-feedback">Entrer un mot de passe valide!
+					</div>
+				</div>
+			</div>
+			<div class="form-row ml-4 mr-4">
+				<div class="col-md-12 mb-3">
+					<label for="validationCustom01"></label> <input type="password"
+						class="form-control" th:field="*{confirmPassword}"
+						placeholder="mot de passe" required>
+					<div class="valid-feedback">
+						<!-- Looks good! -->
+					</div>
+					<!-- <div class="valid-feedback">
+                            Password does not match!
+                        </div> -->
+				</div>
+			</div>
+			<div class="form-group ml-4">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value=""
+						name="checkBox" id="invalidCheck" required> <label
+						class="form-check-label" for="invalidCheck"> Accepter les conditions </label>
+					<div class="invalid-feedback">Priere d'accepter les condition avant votre soumission.</div>
+
+				</div>
+
+			</div>
+			<div class="form-row ml-4 mr-4">
+				<button class="btn btn-primary btn-lg btn-block mt-1 mb-4"
+					type="submit">Inscription</button>
+			</div>
+		</form>
+
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function() {
+				'use strict';
+				window
+						.addEventListener(
+								'load',
+								function() {
+									// Fetch all the forms we want to apply custom Bootstrap validation styles to
+									var forms = document
+											.getElementsByClassName('needs-validation');
+									// Loop over them and prevent submission
+									var validation = Array.prototype.filter
+											.call(
+													forms,
+													function(form) {
+														form
+																.addEventListener(
+																		'submit',
+																		function(
+																				event) {
+																			if (form
+																					.checkValidity() === false) {
+																				event
+																						.preventDefault();
+																				event
+																						.stopPropagation();
+																			}
+																			form.classList
+																					.add('was-validated');
+																		},
+																		false);
+													});
+								}, false);
+			})();
+		</script>
+	</div>
+	<th:block th:insert="fragments/footer.html :: footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Profil | Maktabti</title>
+<th:block
+	th:insert="fragments/bootstrap-starter-template.html :: bootstrap-css"></th:block>
+</head>
+<body>
+	<th:block th:replace="fragments/general.html :: navbar"></th:block>
+
+	<div style="text-align: center" class="mt-4">
+		<h3>Connexion &#38; Securité</h3>
+	</div>
+	<br>
+	<div class="row justify-content-center align-items-center">
+		<div class="col-md-5">
+			<div class="card card-body bg-white">
+				<table class="table borderless">
+					<th:block th:if="${ERROR}">
+						<span class="alert alert-danger">[[${ERROR}]]</span>
+					</th:block>
+					<th:block th:if="${SUCCESS}">
+						<span class="alert alert-success">[[${SUCCESS}]]</span>
+					</th:block>
+					<tbody>
+						<tr>
+							<td style="font-weight: bold;">Nom</td>
+							<td style="">[[${session.user.firstName}]]
+								[[${session.user.lastName}]]</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td style="font-weight: bold;">Email:</td>
+							<td style="">[[${session.user.email}]]</td>
+							<td><button type="button" class="btn btn-secondary"
+									data-toggle="modal" data-target="#updateAccountEmail">Modifier</button></td>
+
+						</tr>
+						<tr>
+							<td style="font-weight: bold;">Mot de passe:</td>
+							<td style="">*******************</td>
+							<td><button type="button" class="btn btn-secondary"
+									data-toggle="modal" data-target="#updateAccountPassword">Modifier</button>
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<th:block
+		th:insert="fragments/modal-forms.html :: update-account-password"></th:block>
+	<th:block
+		th:insert="fragments/modal-forms.html :: update-account-email"></th:block>
+
+	<th:block
+		th:insert="fragments/bootstrap-starter-template.html :: bootstrap-scripts"></th:block>
+	<th:block th:insert="fragments/footer.html :: footer"></th:block>
+
+</body>
+</html>
